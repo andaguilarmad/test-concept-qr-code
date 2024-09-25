@@ -24,6 +24,8 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue
 import ExploreContainer from '@/components/ExploreContainer.vue';
 import { Component, Vue, toNative } from 'vue-facing-decorator'
 import { CapacitorBarcodeScannerWeb } from '@capacitor/barcode-scanner/dist/esm/web';
+import { useHardwareStore } from '@/stores/Hardware'
+import { ref, computed } from 'vue'
 
 import { CapacitorBarcodeScanner } from '@capacitor/barcode-scanner';
 @Component({
@@ -35,8 +37,13 @@ class Tab1 extends Vue {
 
   stringCodeQr:string = ""
 
+
    created(){
-    console.log("si entra perro")
+    const hardwareStore = useHardwareStore()
+ 
+
+
+    console.log("si entra")
    }
 
    openCamaraWeb(){
